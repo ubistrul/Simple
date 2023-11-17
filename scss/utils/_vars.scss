@@ -1,0 +1,78 @@
+//* Container
+$container-paddings-desktop: 15px;
+$container-desktop: 1110px + calc($container-paddings-desktop * 2);
+$container-paddings-1024: 39px;
+$container-1024: 690px + calc($container-paddings-1024 * 2);
+$container-paddings-690: 33px;
+$container-690: 510 + calc($container-paddings-690 * 2);
+$container-paddings-510: 15px;
+$container-510: 100%;
+
+//* Gaps
+$gap-grid-column: 30px;
+
+//* Colors
+$color-bg-main: #ebebeb;
+$color-bg-secondary: #fff;
+$color-bg-footer: #4c5866;
+$color-border-1: #c0c0c0;
+$color-border-2: #c4c4c4;
+$color-border-3: #ddd;
+
+$color-h1: #4C5866;
+$color-h2: #666;
+$color-text-main: #85859B;
+$color-text-secondary: #B5B5BD;
+
+$color-header-border: #DDDDDD;
+$color-header-bg: #fff;
+
+$color-footer-top-bg: #4C5866;
+$color-footer-border-color: #dddddd20;
+$color-footer-right-text: #4C5866;
+$color-footer-right-span: #BCBCBC;
+
+//* Buttons
+$burger-menu-line: #4C5866;
+$burger-menu-line-hover: #7875FE;
+
+$btn-text-padding: 5px;
+$btn-text-default-text: #4C5866;
+$btn-text-hover-text: #7875FE;
+$btn-text-focus-bg: #DAD9FB;
+$btn-text-focus-text: $btn-text-default-text;
+$btn-text-active-text: #4946B4;
+$btn-text-status5-text: #4C5866;
+
+$btn-secondary-default-text: #7875FE;
+$btn-secondary-default-bg: transparent;
+$btn-secondary-hover-bg: #7875FE;
+$btn-secondary-hover-text: #fff;
+$btn-secondary-active-bg: #4946B4;
+$btn-secondary-active-text: #fff;
+$btn-secondary-focus-bg: #DAD9FB;
+$btn-secondary-focus-text: #7875FE;
+$btn_secondary-border-pref: 1px solid $btn-secondary-default-text;
+
+$btn-arrow-default-text: #7875FE;
+$btn-arrow-default-bg: transparent;
+$btn-arrow-hover-text: #4946B4;
+$btn-arrow-focus-text: #7875FE;
+$btn-arrow-focus-bg: #DAD9FB;
+$btn-arrow-active-text: #4946B4;
+
+
+$btn-search-close-default-circle: #D1D1E5;
+$btn-search-close-default-path: #4C5866;
+$btn-search-close-hover-circle: #7875FE;
+$btn-search-close-hover-path: #fff;
+$btn-search-close-focus-outline: #7875FE;
+$btn-search-close-focus-circle: #DAD9FB;
+$btn-search-close-focus-path: #4C5866;
+$btn-search-close-active-circle: #4946B4;
+$btn-search-close-active-path: #fff;
+
+//* Selection colors
+
+$selection-bg: #7875FE;
+$selection-text: #fff;

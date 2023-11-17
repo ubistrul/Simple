@@ -1,0 +1,8 @@
+Верстаю легкий одностраничный сайт. Без систем сборщиков. Обновляю знания по работе с SCSS с VS CODE. 
+
+- Модульная структура верстки и стилей.
+- SCSS
+
+https://verstaem.online/projects/simple/
+
+https://www.figma.com/file/sJwabNIQ83JF9XIGfYCOl4/Simple?type=design&node-id=0-1&mode=design

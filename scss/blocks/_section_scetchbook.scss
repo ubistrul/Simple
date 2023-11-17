@@ -1,0 +1,81 @@
+.scetchbook {
+    background-color: $color-bg-secondary;
+    padding-top: 90px;
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: minmax(350px, 1fr) repeat(2, 1fr);
+        gap: 30px;
+
+        @media screen and (max-width: 689px) {
+            gap: 0;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    @media screen and (max-width: 1023px) {
+        padding-block: 60px;
+        background-image: url(./../../images/scetchbook-section/scetchbook-tablet.png);
+        background-position: right center;
+        background-repeat: no-repeat;
+    }
+
+    @media screen and (max-width: 689px) {
+        padding-block: 60px;
+        background-image: none;
+    }
+}
+
+.scetchbook__content {
+    align-self: center;
+    grid-column: 1;
+    padding-top: 24px;
+    padding-bottom: 114px;
+
+    @media screen and (max-width: 1023px) {
+        padding-block: 30px;
+    }
+
+    @media screen and (max-width: 689px) {
+        padding: 0;
+    }
+}
+
+.scetchbook__title {
+    margin-bottom: 8px;
+
+    @media screen and (max-width: 1023px) {
+        margin-bottom: 20px;
+    }
+}
+
+.scetchbook__text {
+    margin-bottom: 30px;
+}
+
+.scetchbook__btn {
+    padding-inline: 94px;
+
+    @media screen and (max-width: 689px) {
+        padding-inline: 65px;
+    }
+}
+
+.scetchbook__img {
+    grid-column: 2 span;
+    align-self: end;
+
+    @media screen and (max-width: 1023px) {
+        display: none;
+    }
+
+    @media screen and (max-width: 689px) {
+        display: flex;
+        order: -1;
+        width: 100%;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+}

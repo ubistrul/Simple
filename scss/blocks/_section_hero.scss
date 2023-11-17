@@ -1,0 +1,107 @@
+.hero {
+    background-color: $color-bg-secondary;
+    padding-top: 60px;
+
+    @media screen and (max-width: 689px) {
+        padding-top: 20px;
+    }
+
+    @media screen and (max-width: 509px) {
+        padding-block: 49px;
+    }
+
+    &__container {
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+
+        @media screen and (max-width: 1023px) {
+            display: flex;
+            gap: 30px;
+        }
+
+        @media screen and (max-width: 689px) {
+            background-image: url(./../../images/hero-section/bg-elem-mobile.png);
+            background-position: right bottom;
+            background-repeat: no-repeat;
+        }
+
+        @media screen and (max-width: 509px) {
+            background-image: none;
+        }
+    }
+
+
+    &__main {
+        padding-top: 70px;
+        padding-bottom: 130px;
+        grid-column: 6 span;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+
+        @media screen and (max-width: 1023px) {
+            padding-top: 0;
+            padding-bottom: 65px;
+            grid-column: 7 span;
+            max-width: 63%;
+        }
+
+        @media screen and (max-width: 689px) {
+            grid-column: 8 span;
+            padding-top: 40px;
+            max-width: clamp(18rem, -3.369rem + 67.039vw, 25.5rem);
+        }
+
+        @media screen and (max-width: 509px) {
+            max-width: 100%;
+            padding-block: 0;
+        }
+    }
+
+    &__heading {
+        max-width: 445px;
+
+        @media screen and (max-width: 509px) {
+            max-width: clamp(16.5rem, 10.605rem + 29.474vw, 20rem);
+        }
+    }
+
+    &__text {
+        max-width: 445px;
+        // mix-blend-mode: difference;
+
+        @media screen and (max-width: 509px) {
+            max-width: 320px;
+        }
+    }
+
+    
+    &__btn {
+        align-self: flex-start;
+        padding-inline: 89px;
+
+        @media screen and (max-width: 689px) {
+            padding-inline: 60px;
+        }
+    }
+
+    &__img {
+        align-self: end;
+        grid-column: 7 / 6 span;
+        justify-self: end;
+
+        @media screen and (max-width: 1023px) {
+            grid-column: 8 / 6 span;
+        }
+
+        @media screen and (max-width: 689px) {
+            grid-column: 9 / 6 span;
+            display: none;
+        }
+    // }
+}
+
+}
