@@ -859,6 +859,7 @@ body {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  scrollbar-gutter: 40px;
 }
 @media screen and (max-width: 689px) {
   .clients__list {
@@ -866,6 +867,12 @@ body {
   }
 }
 @media screen and (max-width: 689px) {
+  .clients__list {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+@media screen and (max-width: 509px) {
   .clients__list {
     display: flex;
     overflow-x: auto;
@@ -885,7 +892,7 @@ body {
 @media screen and (max-width: 1023px) {
   .client-card {
     height: 80px;
-    padding-inline: 10px;
+    padding-inline: 12px;
   }
 }
 @media screen and (max-width: 689px) {
@@ -894,14 +901,15 @@ body {
     padding-inline: 20px;
   }
 }
-@media screen and (max-width: 689px) {
-  .client-card {
-    min-width: 52%;
-  }
-}
 @media screen and (max-width: 509px) {
   .client-card {
-    min-width: 60%;
+    min-width: 0;
+    flex-basis: 54%;
+    flex-shrink: 0;
+    padding-inline: 20px;
+    padding-block: 40px;
+    scroll-padding: 20px;
+    scroll-snap-align: center;
   }
 }
 .client-card:hover {

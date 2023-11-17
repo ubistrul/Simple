@@ -17,11 +17,18 @@
     }
 
     @media screen and (max-width: 689px) {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 509px) {
         display: flex;
         overflow-x: auto;
         gap: 30px;
         scroll-snap-type: x mandatory;
     }
+
+    scrollbar-gutter: 40px;
 }
 .client-card {
     height: 135px;
@@ -33,7 +40,7 @@
 
     @media screen and (max-width: 1023px) {
         height: 80px;
-        padding-inline: 10px;
+        padding-inline: 12px;
     }
 
     @media screen and (max-width: 689px) {
@@ -42,11 +49,17 @@
     }
 
     @media screen and (max-width: 689px) {
-        min-width: 52%;
+        // min-width: 52%;
     }
 
     @media screen and (max-width: 509px) {
-        min-width: 60%;
+        min-width: 0;
+        flex-basis: 54%;
+        flex-shrink: 0;
+        padding-inline: 20px;
+        padding-block: 40px;
+        scroll-padding: 20px;
+        scroll-snap-align: center;
     }
 
     &:hover {
