@@ -984,7 +984,7 @@ body {
 @media screen and (max-width: 1023px) {
   .scetchbook {
     padding-block: 60px;
-    background-image: url(./images/scetchbook-section/scetchbook-tablet.png);
+    background-image: url(./../images/scetchbook-section/scetchbook-tablet.png);
     background-position: right center;
     background-repeat: no-repeat;
   }
