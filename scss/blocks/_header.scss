@@ -18,9 +18,6 @@
             display: flex;
             justify-content: center;
         }
-        
-
-
     }
 
     &__logo-link {
@@ -65,7 +62,6 @@
     }
 
     &__burger {
-
     }
 }
 
@@ -81,8 +77,10 @@
         }
     }
 
-    &__list-item {}
-    &__link {}
+    &__list-item {
+    }
+    &__link {
+    }
 }
 
 .nav-main-bottom {
@@ -90,7 +88,6 @@
         display: none;
     }
 
-    
     &__list {
         display: flex;
         column-gap: calc(60px - ($btn-text-padding * 2));
@@ -99,10 +96,10 @@
             justify-content: space-between;
             gap: 0;
         }
-
     }
 
-    &__list-item {}
+    &__list-item {
+    }
 
     &__link {
         padding-inline: 0;
@@ -117,11 +114,9 @@
         display: none;
     }
 
-
     &__search {
         margin-right: 30px;
     }
-
 
     &__icon {
         stroke: currentColor;
@@ -149,7 +144,6 @@
         margin-right: 30px;
     }
 
-
     &__icon {
         stroke: currentColor;
     }
@@ -167,9 +161,8 @@
     transition: all 0.2s ease;
 
     &::placeholder {
-        color: #D1D1E5;
+        color: #d1d1e5;
         font-size: 20px;
-
     }
 
     &__close {
@@ -183,7 +176,6 @@
     }
 
     &__close-icon {
-
         & circle {
             fill: $btn-search-close-default-circle;
             transition: all 0.2s ease;
@@ -198,18 +190,70 @@
             & circle {
                 fill: $btn-search-close-hover-circle;
             }
-    
+
             & path {
                 stroke: $btn-search-close-hover-path;
             }
-        }    
+        }
     }
-    
-    
 
     &__input {
         width: 100%;
-        border-bottom: 1px solid #D1D1E5 ;
+        border-bottom: 1px solid #d1d1e5;
+    }
+
+    &--width {
+        width: clamp(10rem, 3.263rem + 33.684vw, 14rem);
+    }
+}
+
+.search-form-top {
+    position: relative;
+    display: flex;
+    width: 0;
+    transform: translateX(-12px);
+    transition: all 0.2s ease;
+
+    &::placeholder {
+        color: #d1d1e5;
+        font-size: 20px;
+    }
+
+    &__close {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: all 0.2s ease;
+    }
+
+    &__close-icon {
+        & circle {
+            fill: $btn-search-close-default-circle;
+            transition: all 0.2s ease;
+        }
+
+        & path {
+            stroke: $btn-search-close-default-path;
+            transition: all 0.2s ease;
+        }
+
+        &:hover {
+            & circle {
+                fill: $btn-search-close-hover-circle;
+            }
+
+            & path {
+                stroke: $btn-search-close-hover-path;
+            }
+        }
+    }
+
+    &__input {
+        width: 100%;
+        border-bottom: 1px solid #d1d1e5;
     }
 
     &--width {

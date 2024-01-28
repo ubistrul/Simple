@@ -2,12 +2,12 @@
     background-color: $color-bg-main;
     position: absolute;
     top: 0;
-    height: 100vh;
-    width: 100vw;
+    height: 100dvh;
+    width: 100dvw;
     z-index: 10;
     padding-block: 66px;
     transform: translateY(-100%);
-    transition: all .2s ease;
+    transition: all 0.2s ease;
 
     &--active {
         transform: translateY(0);
@@ -24,7 +24,7 @@
 .mobile-menu__nav-item {
 }
 .mobile-menu__nav-link {
-    color: #4C5866;
+    color: #4c5866;
     font-size: 18px;
     line-height: normal;
-    }
+}
