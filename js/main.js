@@ -1,50 +1,91 @@
-const body = document.querySelector("body");
+const body = document.querySelector('body');
 const getScrollbarWidth = () => {
     return window.innerWidth - document.documentElement.clientWidth;
 };
+const getWindowHeight = () => window.innerHeight;
+const breakingPoints = {
+    mobile: 509,
+    tablet: 689,
+};
 
-console.log(getScrollbarWidth());
+const header = document.querySelector('.header');
+const headerHeight = () => header.offsetHeight;
+const headerTopHeigth = () => document.querySelector('.header-top').offsetHeight;
+const main = document.querySelector('main');
+const firstMainElement = main.firstElementChild;
+const firstMainElementStyle = window.getComputedStyle(firstMainElement);
+const firstMainElementPaddingTop = () => firstMainElementStyle.getPropertyValue('padding-top');
 
-const searchBtnBottom = document.querySelector(".nav-buttons-bottom__search");
-const searchFormBottom = document.querySelector(".search-form-bottom");
-let searchBtnBottomAriaExpanded =
-    searchFormBottom.getAttribute("aria-expanded");
-const searchFormBottomActive = "search-form-bottom--width";
-const searchCloseBtnBottom = document.querySelector(
-    ".search-form-bottom__close"
-);
-const searchFormBottomInput = document.querySelector(
-    ".search-form-bottom__input"
-);
+function updateElementPadding(element) {
+    if (!element) {
+        return;
+    } else {
+        const style = window.getComputedStyle(element);
+        let paddingTop = parseFloat(style.getPropertyValue('padding-top'));
+        let paddingBottom = parseFloat(style.getPropertyValue('padding-top'));
 
-const burgerMenuBtn = document.querySelector(".burger-menu");
-const burgerMenuClass = "burger-menu--active";
-const mobileMenu = document.querySelector(".mobile-menu");
-const mobileMenuClass = "mobile-menu--active";
-const mobileMenuLink = document.querySelector(".mobile-menu__nav-link");
+        if (window.innerWidth <= breakingPoints.mobile) {
+            paddingTop = 49;
+            paddingBottom = 49;
+        } else if (window.innerWidth <= breakingPoints.tablet) {
+            paddingTop = 20;
+        } else {
+            paddingTop = 60;
+        }
 
-burgerMenuBtn.addEventListener("click", () => {
+        paddingTop += headerHeight();
+        element.style.paddingTop = paddingTop + 'px';
+    }
+}
+
+function updateMobileMenuHeight() {
+    const neededHeight = getWindowHeight() - headerTopHeigth();
+    mobileMenu.style.height = `${neededHeight}px`;
+}
+
+window.addEventListener('resize', () => {
+    updateElementPadding(firstMainElement);
+    updateMobileMenuHeight();
+});
+window.addEventListener('load', () => {
+    updateElementPadding(firstMainElement);
+    updateMobileMenuHeight();
+});
+
+const searchBtnBottom = document.querySelector('.nav-buttons-bottom__search');
+const searchFormBottom = document.querySelector('.search-form-bottom');
+let searchBtnBottomAriaExpanded = searchFormBottom.getAttribute('aria-expanded');
+const searchFormBottomActive = 'search-form-bottom--width';
+const searchCloseBtnBottom = document.querySelector('.search-form-bottom__close');
+const searchFormBottomInput = document.querySelector('.search-form-bottom__input');
+
+const burgerMenuBtn = document.querySelector('.burger-menu');
+const burgerMenuClass = 'burger-menu--active';
+const mobileMenu = document.querySelector('.mobile-menu');
+const mobileMenuHeight = () => mobileMenu.offsetHeight;
+const mobileMenuClass = 'mobile-menu--active';
+const mobileMenuLink = document.querySelector('.mobile-menu__nav-link');
+
+burgerMenuBtn.addEventListener('click', () => {
     burgerMenuBtn.classList.toggle(burgerMenuClass);
     mobileMenu.classList.toggle(mobileMenuClass);
     if (mobileMenu.classList.contains(mobileMenuClass)) {
         body.style.paddingRight += `${getScrollbarWidth()}px`;
     } else {
-        body.style.cssText = "";
+        body.style.cssText = '';
     }
-    body.classList.toggle("no-scroll");
+    body.classList.toggle('no-scroll');
 });
 
-mobileMenu.addEventListener("click", (e) => {
+mobileMenu.addEventListener('click', (e) => {
     if (e.target != mobileMenuLink) {
         burgerMenuBtn.classList.remove(burgerMenuClass);
         mobileMenu.classList.remove(mobileMenuClass);
-        body.classList.remove("no-scroll");
+        body.classList.remove('no-scroll');
     }
 });
 
-console.log(searchBtnBottomAriaExpanded);
-
-searchBtnBottom.addEventListener("click", () => {
+searchBtnBottom.addEventListener('click', () => {
     if (!searchFormBottom.classList.contains(searchFormBottomActive)) {
         searchBottomOpen();
         searchFormBottomInput.focus();
@@ -66,7 +107,7 @@ searchBtnBottom.addEventListener("click", () => {
     }
 });
 
-searchCloseBtnBottom.addEventListener("click", () => {
+searchCloseBtnBottom.addEventListener('click', () => {
     if (searchFormBottom.classList.contains(searchFormBottomActive)) {
         searchBottomClose();
     }
@@ -74,25 +115,22 @@ searchCloseBtnBottom.addEventListener("click", () => {
 
 function searchBottomOpen() {
     searchFormBottom.classList.add(searchFormBottomActive);
-    searchFormBottom.setAttribute("aria-expanded", true);
+    searchFormBottom.setAttribute('aria-expanded', true);
 }
 
 function searchBottomClose() {
     searchFormBottom.classList.remove(searchFormBottomActive);
-    searchFormBottom.setAttribute("aria-expanded", false);
+    searchFormBottom.setAttribute('aria-expanded', false);
 }
 
-const searchBtnTop = document.querySelector(".nav-buttons-top__search");
-const searchFormTop = document.querySelector(".search-form-top");
-let searchBtnTopAriaExpanded = searchFormTop.getAttribute("aria-expanded");
-const searchFormTopActive = "search-form-top--width";
-const searchCloseBtnTop = document.querySelector(".search-form-top__close");
-const searchFormTopInput = document.querySelector(".search-form-top__input");
+const searchBtnTop = document.querySelector('.nav-buttons-top__search');
+const searchFormTop = document.querySelector('.search-form-top');
+let searchBtnTopAriaExpanded = searchFormTop.getAttribute('aria-expanded');
+const searchFormTopActive = 'search-form-top--width';
+const searchCloseBtnTop = document.querySelector('.search-form-top__close');
+const searchFormTopInput = document.querySelector('.search-form-top__input');
 
-console.log(searchBtnTop);
-console.log(searchFormTop);
-
-searchBtnTop.addEventListener("click", () => {
+searchBtnTop.addEventListener('click', () => {
     if (!searchFormTop.classList.contains(searchFormTopActive)) {
         searchTopOpen();
         searchFormTopInput.focus();
@@ -114,19 +152,19 @@ searchBtnTop.addEventListener("click", () => {
     }
 });
 
-searchCloseBtnTop.addEventListener("click", () => {
+searchCloseBtnTop.addEventListener('click', () => {
     if (searchFormTop.classList.contains(searchFormTopActive)) {
-        console.log("close!");
+        console.log('close!');
         searchTopClose();
     }
 });
 
 function searchTopOpen() {
     searchFormTop.classList.add(searchFormTopActive);
-    searchFormTop.setAttribute("aria-expanded", true);
+    searchFormTop.setAttribute('aria-expanded', true);
 }
 
 function searchTopClose() {
     searchFormTop.classList.remove(searchFormTopActive);
-    searchFormTop.setAttribute("aria-expanded", false);
+    searchFormTop.setAttribute('aria-expanded', false);
 }

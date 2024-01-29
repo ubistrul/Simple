@@ -2,11 +2,12 @@
     background-color: $color-bg-main;
     position: absolute;
     top: 0;
+    // height: 9999%;
     height: 100dvh;
     width: 100dvw;
     z-index: 10;
     padding-block: 66px;
-    transform: translateY(-100%);
+    transform: translateY(-300%);
     transition: all 0.2s ease;
 
     &--active {
