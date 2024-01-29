@@ -39,8 +39,9 @@ function updateElementPadding(element) {
 }
 
 function updateMobileMenuHeight() {
+    const offset = 10;
     const neededHeight = getWindowHeight() - headerTopHeigth();
-    mobileMenu.style.height = `${neededHeight}px`;
+    mobileMenu.style.height = `${neededHeight + offset}px`;
 }
 
 window.addEventListener('resize', () => {
