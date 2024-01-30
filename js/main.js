@@ -67,9 +67,15 @@ const mobileMenuHeight = () => mobileMenu.offsetHeight;
 const mobileMenuClass = 'mobile-menu--active';
 const mobileMenuLink = document.querySelector('.mobile-menu__nav-link');
 
+const ariaHiddenAttribute = 'aria-hidden';
+const ariaExpandedAttribute = 'aria-expanded';
+const ariaLabelAttribute = 'aria-label';
+const ariaDescriptionAttribute = 'aria-description';
+
 burgerMenuBtn.addEventListener('click', () => {
     burgerMenuBtn.classList.toggle(burgerMenuClass);
     mobileMenu.classList.toggle(mobileMenuClass);
+    menuToggleAttributes();
     if (mobileMenu.classList.contains(mobileMenuClass)) {
         body.style.paddingRight += `${getScrollbarWidth()}px`;
     } else {
@@ -83,8 +89,28 @@ mobileMenu.addEventListener('click', (e) => {
         burgerMenuBtn.classList.remove(burgerMenuClass);
         mobileMenu.classList.remove(mobileMenuClass);
         body.classList.remove('no-scroll');
+        menuToggleAttributes();
     }
 });
+
+function toggleAttributes(elem, attribute) {
+    if (elem && attribute && elem.getAttribute(attribute)) {
+        const newAttrValue = elem.getAttribute(attribute) === 'true' ? false : true;
+        elem.setAttribute(attribute, newAttrValue);
+    } else {
+        return;
+    }
+}
+
+function menuToggleAttributes() {
+    toggleAttributes(mobileMenu, ariaHiddenAttribute);
+    toggleAttributes(mobileMenu, ariaExpandedAttribute);
+    // if (mobileMenu.getAttribute(ariaExpandedAttribute) == 'true') {
+    //     console.log('Открыто');
+    // } else {
+    //     console.log('Закрыто');
+    // }
+}
 
 searchBtnBottom.addEventListener('click', () => {
     if (!searchFormBottom.classList.contains(searchFormBottomActive)) {
