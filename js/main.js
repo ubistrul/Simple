@@ -181,7 +181,6 @@ searchBtnTop.addEventListener('click', () => {
 
 searchCloseBtnTop.addEventListener('click', () => {
     if (searchFormTop.classList.contains(searchFormTopActive)) {
-        console.log('close!');
         searchTopClose();
     }
 });
