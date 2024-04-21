@@ -411,6 +411,7 @@ body {
 .nav-main-top__link {
   margin-left: unset;
   margin-right: unset;
+  white-space: nowrap;
 }
 @media screen and (max-width: 509px) {
   .nav-main-top {
@@ -676,7 +677,6 @@ body {
 @media screen and (max-width: 1023px) {
   .hero__grid {
     display: flex;
-    gap: 30px;
   }
 }
 @media screen and (max-width: 689px) {
@@ -1050,12 +1050,7 @@ body {
 }
 
 .scetchbook__title {
-  margin-bottom: 8px;
-}
-@media screen and (max-width: 1023px) {
-  .scetchbook__title {
-    margin-bottom: 20px;
-  }
+  margin-bottom: 20px;
 }
 
 .scetchbook__text {

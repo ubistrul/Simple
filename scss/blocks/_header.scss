@@ -72,7 +72,6 @@
 }
 
 .nav-main-top {
-    // margin-right: calc(60px - ($btn-text-padding));
     margin-left: auto;
     margin-right: 60px;
 
@@ -87,9 +86,11 @@
 
     &__list-item {
     }
+
     &__link {
         margin-left: unset;
         margin-right: unset;
+        white-space: nowrap;
     }
 
     @media screen and (max-width: 509px) {

@@ -21,21 +21,21 @@
                     <nav class="nav-main-top">
                         <ul class="nav-main-top__list">
                             <li class="nav-main-top__list-item">
-                                <a href="" class="text-btn nav-main-top__link">Продукция</a>
+                                <a href="#products" class="text-btn nav-main-top__link">Продукция</a>
                             </li>
                             <li class="nav-main-top__list-item">
-                                <a href="" class="text-btn nav-main-top__link">Материалы</a>
+                                <a href="#features" class="text-btn nav-main-top__link">Материалы</a>
                             </li>
                             <li class="nav-main-top__list-item">
-                                <a href="" class="text-btn nav-main-top__link">О нас</a>
+                                <a href="#" class="text-btn nav-main-top__link">О нас</a>
                             </li>
                             <li class="nav-main-top__list-item">
-                                <a href="" class="text-btn nav-main-top__link">Контакты</a>
+                                <a href="#" class="text-btn nav-main-top__link">Контакты</a>
                             </li>
                         </ul>
                     </nav>
 
-                    <nav class="nav-buttons-top">
+                    <div class="nav-buttons-top">
                         <button class="btn-icon nav-buttons-top__search nav-button" type="button">
                             <svg class="nav-buttons-top__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -81,7 +81,7 @@
                                 </g>
                             </svg>
                         </button>
-                    </nav>
+                    </div>
 
                 </div>
             </div>
@@ -95,21 +95,21 @@
                     <nav class="nav-main-bottom">
                         <ul class="nav-main-bottom__list">
                             <li class="nav-main-bottom__list-item">
-                                <a href="" class="text-btn nav-main-bottom__link">Продукция</a>
+                                <a href="#products" class="text-btn nav-main-bottom__link">Продукция</a>
                             </li>
                             <li class="nav-main-bottom__list-item">
-                                <a href="" class="text-btn nav-main-bottom__link">Материалы</a>
+                                <a href="#features" class="text-btn nav-main-bottom__link">Материалы</a>
                             </li>
                             <li class="nav-main-bottom__list-item">
-                                <a href="" class="text-btn nav-main-bottom__link">О нас</a>
+                                <a href="#" class="text-btn nav-main-bottom__link">О нас</a>
                             </li>
                             <li class="nav-main-bottom__list-item">
-                                <a href="" class="text-btn nav-main-bottom__link">Контакты</a>
+                                <a href="#" class="text-btn nav-main-bottom__link">Контакты</a>
                             </li>
                         </ul>
                     </nav>
 
-                    <nav class="nav-buttons-bottom">
+                    <div class="nav-buttons-bottom">
                         <button class="btn-icon nav-buttons-bottom__search nav-button" type="button">
                             <svg class="nav-buttons-bottom__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
                                 xmlns="http://www.w3.org/2000/svg">
@@ -155,7 +155,7 @@
                                 </g>
                             </svg>
                         </button>
-                    </nav>
+                    </div>
 
                 </div>
             </div>
@@ -163,12 +163,15 @@
                 <div class="container">
                     <nav class="mobile-menu__nav">
                         <ul class="mobile-menu__nav-list">
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="">Продукция</a>
+                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                                    href="#products">Продукция</a>
                             </li>
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="">Материалы</a>
+                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                                    href="#features">Материалы</a>
                             </li>
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="">О нас</a></li>
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="">Контакты</a></li>
+                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="#">О нас</a></li>
+                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="#">Контакты</a>
+                            </li>
                         </ul>
                     </nav>
                 </div>
@@ -201,7 +204,7 @@
             </div>
         </section>
 
-        <section class="features">
+        <section id="features" class="features">
             <h1 class="visually-hidden">Фишки продукции</h1>
             <div class="container">
                 <div class="features__top">
@@ -244,7 +247,7 @@
             </div>
         </section>
 
-        <section class="products">
+        <section id="products" class="products">
             <h1 class="visually-hidden">Наша продукция</h1>
             <div class="container">
                 <ul class="products__list">
@@ -406,7 +409,7 @@
         </footer>
     </main>
 
-    <script src="./js/main.js" defer></script>
+    <script src="./js/main.js" type="module" defer></script>
 </body>
 
 </html>
