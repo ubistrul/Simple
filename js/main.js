@@ -1,15 +1,7 @@
 import { BREAK_POINTS } from './consts.js';
 import { MobileMenuController } from './modules/mobileMenu.js';
 import { SearchController } from './modules/searchController.js';
-import {
-    elementHasClassName,
-    addClass,
-    removeClass,
-    setAttrubuteBoolean,
-    focusToElem,
-} from './helpers/index.js';
 
-const noScrollClassName = 'no-scroll';
 const getScrollbarWidth = () => {
     return window.innerWidth - document.documentElement.clientWidth;
 };
@@ -30,13 +22,18 @@ function updateElementPadding(element) {
 
     const style = window.getComputedStyle(element);
     let paddingTop = parseFloat(style.getPropertyValue('padding-top'));
+    const PADDINGS = {
+        mobile: 49,
+        tablet: 20,
+        else: 60,
+    };
 
     if (window.innerWidth <= BREAK_POINTS.mobile) {
-        paddingTop = 49;
+        paddingTop = PADDINGS.mobile;
     } else if (window.innerWidth <= BREAK_POINTS.tablet) {
-        paddingTop = 20;
+        paddingTop = PADDINGS.tablet;
     } else {
-        paddingTop = 60;
+        paddingTop = PADDINGS.else;
     }
 
     paddingTop += currentHeaderHeight();
@@ -79,7 +76,7 @@ const mobileMenuControl = new MobileMenuController({
     menuLinks: mobileMenuLinks,
 });
 
-//? Top Search
+//? Top Header Search
 
 const searchBtnTop = document.querySelector('.nav-buttons-top__search');
 const searchFormTop = document.querySelector('.search-form-top');
@@ -95,7 +92,7 @@ const searchTopController = new SearchController({
     activeClass: searchFormTopActive,
 });
 
-//? Bottom Search
+//? Bottom Header Search
 
 const searchBtnBottom = document.querySelector('.nav-buttons-bottom__search');
 const searchFormBottom = document.querySelector('.search-form-bottom');
@@ -113,11 +110,12 @@ const searchBottomController = new SearchController({
 
 //? Smooth scroll to Links
 
-const smoothLinks = document.querySelectorAll('a[href^="#"]');
+const smoothLinks = document.querySelectorAll('a[href^="#"]', 'a[href^="#"]');
 
 smoothLinks.forEach((item) => {
-    const hashLink = item.getAttribute('href').replace('#', '');
-    if (hashLink) {
+    let hashLink = item.getAttribute('href').replace('#', '');
+
+    if (hashLink && hashLink !== '!') {
         item.addEventListener('click', (event) => {
             event.preventDefault();
             const element = document.querySelector(`#${hashLink}`);
@@ -129,8 +127,9 @@ smoothLinks.forEach((item) => {
                     mobileMenuControl.closeMenu();
                 }
             }
-
             window.scrollTo({ top: y, behavior: 'smooth' });
+            window.history.pushState(null, null, `#${hashLink}`);
+            item.blur();
         });
     }
 });

@@ -1,4 +1,4 @@
-import { setAttrubuteBoolean } from '../helpers/index.js';
+import { getScrollbarWidth, setAttrubuteBoolean } from '../helpers/index.js';
 import { ARIA_EXPANDED_ATTRIBUTE, ARIA_HIDDEN_ATTRIBUTE } from '../consts.js';
 
 class MobileMenuController {
@@ -27,16 +27,16 @@ class MobileMenuController {
     openMenu() {
         this.triggerElement.classList.add(this.triggerElementClassActive);
         this.menuElement.classList.add(this.menuElementClassActive);
-        this.body.classList.add('no-scroll');
         this.setBodyOverflow();
+        this.body.classList.add('no-scroll');
         this.setAriaAttributes();
     }
 
     closeMenu() {
         this.triggerElement.classList.remove(this.triggerElementClassActive);
         this.menuElement.classList.remove(this.menuElementClassActive);
-        this.body.classList.remove('no-scroll');
         this.setBodyOverflow();
+        this.body.classList.remove('no-scroll');
         this.setAriaAttributes();
     }
 
@@ -58,7 +58,8 @@ class MobileMenuController {
 
     setBodyOverflow() {
         if (this.isMenuHasActiveClass()) {
-            const scrollbarWidth = this.getScrollbarWidth();
+            const scrollbarWidth = getScrollbarWidth();
+            console.log(scrollbarWidth);
             this.body.style.paddingRight = `${scrollbarWidth}px`;
         } else {
             this.body.style.paddingRight = '';
@@ -67,10 +68,6 @@ class MobileMenuController {
 
     setStyleHeight(height) {
         this.menuElement.style.height = height;
-    }
-
-    getScrollbarWidth() {
-        return window.innerWidth - document.documentElement.clientWidth;
     }
 
     isMenuHasActiveClass() {

@@ -186,9 +186,12 @@ body {
   align-items: center;
   justify-content: center;
   color: #4C5866;
+  transition: color 0.1s ease-in;
 }
-.btn-icon:hover {
-  color: #7875FE;
+@media (hover: hover) {
+  .btn-icon:hover {
+    color: #7875FE;
+  }
 }
 
 .text-btn {
@@ -202,13 +205,14 @@ body {
   line-height: normal;
   transition: color 0.2s ease-in, background-color 0.2s ease-in;
 }
-.text-btn:hover {
-  color: #7875FE;
+@media (hover: hover) {
+  .text-btn:hover {
+    color: #7875FE;
+  }
 }
 .text-btn:focus {
   outline: none;
   color: #4C5866;
-  background-color: #DAD9FB;
 }
 .text-btn:active {
   color: #4946B4;
@@ -228,9 +232,11 @@ body {
   line-height: normal;
   transition: all 0.1s ease;
 }
-.btn-secondary:hover {
-  background-color: #7875FE;
-  color: #fff;
+@media (hover: hover) {
+  .btn-secondary:hover {
+    background-color: #7875FE;
+    color: #fff;
+  }
 }
 
 .btn-arrow {
@@ -248,11 +254,13 @@ body {
   fill: currentColor;
   transition: transform 0.3s ease;
 }
-.btn-arrow:hover {
-  color: #4946B4;
-}
-.btn-arrow:hover .btn-arrow__arrow {
-  transform: translateX(5px);
+@media (hover: hover) {
+  .btn-arrow:hover {
+    color: #4946B4;
+  }
+  .btn-arrow:hover .btn-arrow__arrow {
+    transform: translateX(5px);
+  }
 }
 
 .h1 {

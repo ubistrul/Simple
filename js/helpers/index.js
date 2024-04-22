@@ -35,4 +35,15 @@ function focusToElem(element) {
     element.focus();
 }
 
-export { elementHasClassName, addClass, removeClass, setAttrubuteBoolean, focusToElem };
+function getScrollbarWidth() {
+    return window.innerWidth - document.documentElement.clientWidth;
+}
+
+export {
+    elementHasClassName,
+    addClass,
+    removeClass,
+    setAttrubuteBoolean,
+    focusToElem,
+    getScrollbarWidth,
+};

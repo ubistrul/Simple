@@ -95,8 +95,12 @@ body {
     justify-content: center;
     color: $btn-text-default-text;
 
-    &:hover {
-        color: $btn-text-hover-text;
+    transition: color 0.1s ease-in;
+
+    @media (hover: hover) {
+        &:hover {
+            color: $btn-text-hover-text;
+        }
     }
 }
 
@@ -111,14 +115,15 @@ body {
     line-height: normal;
     transition: color 0.2s ease-in, background-color 0.2s ease-in;
 
-    &:hover {
-        color: $btn-text-hover-text;
+    @media (hover: hover) {
+        &:hover {
+            color: $btn-text-hover-text;
+        }
     }
 
     &:focus {
         outline: none;
         color: $btn-text-focus-text;
-        background-color: $btn-text-focus-bg;
     }
 
     &:active {
@@ -142,9 +147,11 @@ body {
 
     transition: all 0.1s ease;
 
-    &:hover {
-        background-color: $btn-secondary-hover-bg;
-        color: $btn-secondary-hover-text;
+    @media (hover: hover) {
+        &:hover {
+            background-color: $btn-secondary-hover-bg;
+            color: $btn-secondary-hover-text;
+        }
     }
 }
 
@@ -164,12 +171,14 @@ body {
         transition: transform 0.3s ease;
     }
 
-    &:hover {
-        color: $btn-arrow-hover-text;
-    }
+    @media (hover: hover) {
+        &:hover {
+            color: $btn-arrow-hover-text;
 
-    &:hover .btn-arrow__arrow {
-        transform: translateX(5px);
+            .btn-arrow__arrow {
+                transform: translateX(5px);
+            }
+        }
     }
 }
 
@@ -181,17 +190,14 @@ body {
     line-height: 100%;
 
     @media screen and (max-width: 1023px) {
-        // font-size: 38px;
         font-size: clamp(3.125rem, 1.834rem + 2.994vw, 3.75rem);
     }
 
     @media screen and (max-width: 689px) {
-        // font-size: 16px;
         font-size: clamp(2.375rem, 0.25rem + 6.667vw, 3.125rem);
     }
 
     @media screen and (max-width: 509px) {
-        // font-size: 16px;
         font-size: clamp(1.875rem, 1.033rem + 4.211vw, 2.375rem);
     }
 }
@@ -204,12 +210,10 @@ body {
     line-height: 100%;
 
     @media screen and (max-width: 1023px) {
-        // font-size: 38px;
         font-size: clamp(1.875rem, 0.584rem + 2.994vw, 2.5rem);
     }
 
     @media screen and (max-width: 689px) {
-        // font-size: 16px;
         font-size: clamp(1.5rem, 0.438rem + 3.333vw, 1.875rem);
     }
 }
@@ -231,12 +235,10 @@ body {
     line-height: 170%;
 
     @media screen and (max-width: 689px) {
-        // font-size: 16px;
         font-size: clamp(1rem, 0.646rem + 1.111vw, 1.125rem);
     }
 
     @media screen and (max-width: 509px) {
-        // font-size: 16px;
         font-size: clamp(0.875rem, 0.681rem + 1vw, 1rem);
     }
 }
