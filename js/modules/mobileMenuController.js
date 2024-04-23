@@ -59,7 +59,6 @@ class MobileMenuController {
     setBodyOverflow() {
         if (this.isMenuHasActiveClass()) {
             const scrollbarWidth = getScrollbarWidth();
-            console.log(scrollbarWidth);
             this.body.style.paddingRight = `${scrollbarWidth}px`;
         } else {
             this.body.style.paddingRight = '';
@@ -82,6 +81,10 @@ class MobileMenuController {
 
         this.menuElement.setAttribute('aria-hidden', ariaHidden);
         this.menuElement.setAttribute('aria-expanded', ariaExpanded);
+    }
+
+    updateMobileMenuHeight(offset = 10, height = 0) {
+        this.setStyleHeight(`${height + offset}px`);
     }
 }
 

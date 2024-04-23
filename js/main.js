@@ -1,27 +1,31 @@
 import { BREAK_POINTS } from './consts.js';
-import { MobileMenuController } from './modules/mobileMenu.js';
+import { MobileMenuController } from './modules/mobileMenuController.js';
 import { SearchController } from './modules/searchController.js';
-
-const getScrollbarWidth = () => {
-    return window.innerWidth - document.documentElement.clientWidth;
-};
-const getWindowHeight = () => window.innerHeight;
+import { smoothLinksScroll } from './modules/smoothLinksScroll.js';
+import { getWindowHeight } from './helpers/index.js';
+import { HeaderController } from './modules/headerController.js';
 
 const header = document.querySelector('.header');
-const currentHeaderHeight = () => header.offsetHeight;
-const headerTopHeigth = () => document.querySelector('.header-top').offsetHeight;
+const headerTop = document.querySelector('.header-top');
+const headerBottom = document.querySelector('.header-bottom');
+
+const headerController = new HeaderController({
+    mainHeaderEl: header,
+    topHeaderElement: headerTop,
+    bottomHeaderElement: headerBottom,
+});
+
+const mobileMenuHeight = () => getWindowHeight() - headerController.currentTopHeaderHeight();
 const main = document.querySelector('main');
 const firstMainElement = main.firstElementChild;
-const firstMainElementStyle = window.getComputedStyle(firstMainElement);
-const firstMainElementPaddingTop = () => firstMainElementStyle.getPropertyValue('padding-top');
 
 function updateElementPadding(element) {
     if (!element) {
         return;
     }
 
-    const style = window.getComputedStyle(element);
-    let paddingTop = parseFloat(style.getPropertyValue('padding-top'));
+    const elementStyles = window.getComputedStyle(element);
+    let paddingTop = parseFloat(elementStyles.getPropertyValue('padding-top'));
     const PADDINGS = {
         mobile: 49,
         tablet: 20,
@@ -33,30 +37,26 @@ function updateElementPadding(element) {
     } else if (window.innerWidth <= BREAK_POINTS.tablet) {
         paddingTop = PADDINGS.tablet;
     } else {
-        paddingTop = PADDINGS.else;
+        paddingTop = PADDINGS.else || 0;
     }
 
-    paddingTop += currentHeaderHeight();
+    paddingTop += headerController.currentHeaderHeight();
     element.style.paddingTop = paddingTop + 'px';
 }
 
-function updateMobileMenuHeight() {
-    const offset = 10;
-    const neededHeight = getWindowHeight() - headerTopHeigth();
-    mobileMenuControl.setStyleHeight(`${neededHeight + offset}px`);
-}
-
 window.addEventListener('resize', () => {
+    mobileMenuControl.updateMobileMenuHeight(10, mobileMenuHeight());
+
     updateElementPadding(firstMainElement);
-    updateMobileMenuHeight();
     if (window.innerWidth > BREAK_POINTS.mobile) {
         mobileMenuControl.closeMenu();
     }
 });
 
 window.addEventListener('load', () => {
+    mobileMenuControl.updateMobileMenuHeight(10, mobileMenuHeight());
+
     updateElementPadding(firstMainElement);
-    updateMobileMenuHeight();
 });
 
 //? Mobile menu logic
@@ -110,26 +110,5 @@ const searchBottomController = new SearchController({
 
 //? Smooth scroll to Links
 
-const smoothLinks = document.querySelectorAll('a[href^="#"]', 'a[href^="#"]');
-
-smoothLinks.forEach((item) => {
-    let hashLink = item.getAttribute('href').replace('#', '');
-
-    if (hashLink && hashLink !== '!') {
-        item.addEventListener('click', (event) => {
-            event.preventDefault();
-            const element = document.querySelector(`#${hashLink}`);
-            const y = element.getBoundingClientRect().top + window.scrollY - currentHeaderHeight();
-
-            {
-                const mobileMenuLinks = Array.from(mobileMenuControl.innerLinks);
-                if (mobileMenuLinks.includes(item)) {
-                    mobileMenuControl.closeMenu();
-                }
-            }
-            window.scrollTo({ top: y, behavior: 'smooth' });
-            window.history.pushState(null, null, `#${hashLink}`);
-            item.blur();
-        });
-    }
-});
+const smoothLinks = document.querySelectorAll('a[href^="#"]', 'a[href^="#!"]');
+smoothLinksScroll(smoothLinks, mobileMenuControl);

@@ -39,6 +39,8 @@ function getScrollbarWidth() {
     return window.innerWidth - document.documentElement.clientWidth;
 }
 
+const getWindowHeight = () => window.innerHeight;
+
 export {
     elementHasClassName,
     addClass,
@@ -46,4 +48,5 @@ export {
     setAttrubuteBoolean,
     focusToElem,
     getScrollbarWidth,
+    getWindowHeight,
 };
