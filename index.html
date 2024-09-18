@@ -4,180 +4,111 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/main.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <title>Simple - Главная страница</title>
 </head>
 
 <body>
-    <header class="header">
-        <div class="header-top">
-            <div class="container">
-                <div class="header-top__wrapper">
+    <header class="header-main">
 
-                    <a href="#!" class="header-top__logo-link">
-                        <img src="./images/icons/logo.svg" alt="Logotype Simple company" class="header__logo-img">
-                    </a>
+        <div class="container">
+            <div class="header-main__wrapper">
 
-                    <nav class="nav-main-top">
-                        <ul class="nav-main-top__list">
-                            <li class="nav-main-top__list-item">
-                                <a href="#products" class="text-btn nav-main-top__link">Продукция</a>
-                            </li>
-                            <li class="nav-main-top__list-item">
-                                <a href="#features" class="text-btn nav-main-top__link">Материалы</a>
-                            </li>
-                            <li class="nav-main-top__list-item">
-                                <a href="#" class="text-btn nav-main-top__link">О нас</a>
-                            </li>
-                            <li class="nav-main-top__list-item">
-                                <a href="#" class="text-btn nav-main-top__link">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
+                <a href="#!" class="header-main__logo-link">
+                    <img src="./images/icons/logo.svg" alt="Logotype Simple company" class="header-main__logo-img">
+                </a>
 
-                    <div class="nav-buttons-top">
-                        <button class="btn-icon nav-buttons-top__search nav-button" type="button">
-                            <svg class="nav-buttons-top__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_4961)">
-                                    <path
-                                        d="M13 19C8.58175 19 5.00003 15.4183 5.00003 11C5.00003 6.58172 8.58175 3 13 3C17.4183 3 21 6.58172 21 11C21 15.4183 17.4183 19 13 19Z"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M2.99998 20.9999L7.34998 16.6499" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1_4961">
-                                        <rect width="24" height="24" fill="white" transform="matrix(-1 0 0 1 24 0)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-                        </button>
-                        <form class="search-form-top" action="#!" method="get" aria-expanded="false">
-                            <input class="search-form-top__input" type="text" placeholder="Найти">
-                            <button class="search-form-top__close" type="button">
-                                <svg class="search-form-top__close-icon" xmlns="http://www.w3.org/2000/svg" width="16"
-                                    height="16" viewBox="0 0 16 16" fill="none">
-                                    <circle cx="8" cy="8" r="8" fill="#D1D1E5" />
-                                    <path d="M5.99961 10.35L10.3496 6" stroke="#4C5866" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10.35 10.35L6 6" stroke="#4C5866" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </form>
-                        <button class="btn-icon nav-buttons-top__user nav-button" type="button">
-                            <svg class="nav-buttons-top__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_497)">
-                                    <path
-                                        d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15"
-                                        stroke="#4C5866" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10 17L15 12L10 7" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M15 12H3" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </g>
-                            </svg>
-                        </button>
-                    </div>
+                <nav class="nav-main">
+                    <ul class="nav-main__list">
+                        <li class="nav-main__list-item">
+                            <a href="#products" class="text-btn nav-main__link">Продукция</a>
+                        </li>
+                        <li class="nav-main__list-item">
+                            <a href="#features" class="text-btn nav-main__link">Материалы</a>
+                        </li>
+                        <li class="nav-main__list-item">
+                            <a href="#" class="text-btn nav-main__link">О нас</a>
+                        </li>
+                        <li class="nav-main__list-item">
+                            <a href="#" class="text-btn nav-main__link">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
 
-                </div>
-            </div>
-        </div>
-        <div class="header-bottom">
-            <div class="container">
-                <div class="header-bottom__wrapper">
-                    <button class="burger-menu" type="button">
-                        <span class="burger-line"></span>
+                <div class="nav-buttons">
+                    <button class="btn-icon nav-buttons__search nav-button" type="button">
+                        <svg class="nav-buttons__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_4961)">
+                                <path
+                                    d="M13 19C8.58175 19 5.00003 15.4183 5.00003 11C5.00003 6.58172 8.58175 3 13 3C17.4183 3 21 6.58172 21 11C21 15.4183 17.4183 19 13 19Z"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M2.99998 20.9999L7.34998 16.6499" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                            </g>
+                            <defs>
+                                <clipPath id="clip0_1_4961">
+                                    <rect width="24" height="24" fill="white" transform="matrix(-1 0 0 1 24 0)" />
+                                </clipPath>
+                            </defs>
+                        </svg>
                     </button>
-                    <nav class="nav-main-bottom">
-                        <ul class="nav-main-bottom__list">
-                            <li class="nav-main-bottom__list-item">
-                                <a href="#products" class="text-btn nav-main-bottom__link">Продукция</a>
-                            </li>
-                            <li class="nav-main-bottom__list-item">
-                                <a href="#features" class="text-btn nav-main-bottom__link">Материалы</a>
-                            </li>
-                            <li class="nav-main-bottom__list-item">
-                                <a href="#" class="text-btn nav-main-bottom__link">О нас</a>
-                            </li>
-                            <li class="nav-main-bottom__list-item">
-                                <a href="#" class="text-btn nav-main-bottom__link">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-
-                    <div class="nav-buttons-bottom">
-                        <button class="btn-icon nav-buttons-bottom__search nav-button" type="button">
-                            <svg class="nav-buttons-bottom__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_4962)">
-                                    <path
-                                        d="M13 19C8.58175 19 5.00003 15.4183 5.00003 11C5.00003 6.58172 8.58175 3 13 3C17.4183 3 21 6.58172 21 11C21 15.4183 17.4183 19 13 19Z"
-                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M2.99998 20.9999L7.34998 16.6499" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_1_4962">
-                                        <rect width="24" height="24" fill="white" transform="matrix(-1 0 0 1 24 0)" />
-                                    </clipPath>
-                                </defs>
+                    <form class="search-form" action="#!" method="get" aria-expanded="false">
+                        <input class="search-form__input" type="text" placeholder="Найти">
+                        <button class="search-form__close" type="button">
+                            <svg class="search-form__close-icon" xmlns="http://www.w3.org/2000/svg" width="16"
+                                height="16" viewBox="0 0 16 16" fill="none">
+                                <circle cx="8" cy="8" r="8" fill="#D1D1E5" />
+                                <path d="M5.99961 10.35L10.3496 6" stroke="#4C5866" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M10.35 10.35L6 6" stroke="#4C5866" stroke-linecap="round"
+                                    stroke-linejoin="round" />
                             </svg>
                         </button>
-                        <form class="search-form-bottom" action="#!" method="get" aria-expanded="false">
-                            <input class="search-form-bottom__input" type="text" placeholder="Найти">
-                            <button class="search-form-bottom__close" type="button">
-                                <svg class="search-form-bottom__close-icon" xmlns="http://www.w3.org/2000/svg"
-                                    width="16" height="16" viewBox="0 0 16 16" fill="none">
-                                    <circle cx="8" cy="8" r="8" fill="#D1D1E5" />
-                                    <path d="M5.99961 10.35L10.3496 6" stroke="#4C5866" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10.35 10.35L6 6" stroke="#4C5866" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </button>
-                        </form>
-                        <button class="btn-icon nav-buttons-bottom__user nav-button" type="button">
-                            <svg class="nav-buttons-bottom__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <g clip-path="url(#clip0_1_497)">
-                                    <path
-                                        d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15"
-                                        stroke="#4C5866" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M10 17L15 12L10 7" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M15 12H3" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </g>
-                            </svg>
-                        </button>
-                    </div>
+                    </form>
+                    <button class="btn-icon nav-buttons__user nav-button" type="button">
+                        <svg class="nav-buttons__icon" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <g clip-path="url(#clip0_1_497)">
+                                <path
+                                    d="M15 3H19C19.5304 3 20.0391 3.21071 20.4142 3.58579C20.7893 3.96086 21 4.46957 21 5V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H15"
+                                    stroke="#4C5866" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                                <path d="M10 17L15 12L10 7" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <path d="M15 12H3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </g>
+                        </svg>
+                    </button>
+                </div>
 
-                </div>
-            </div>
-            <div class="mobile-menu" role="navigation" aria-hidden="true" aria-expanded="false">
-                <div class="container">
-                    <nav class="mobile-menu__nav">
-                        <ul class="mobile-menu__nav-list">
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
-                                    href="#products">Продукция</a>
-                            </li>
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
-                                    href="#features">Материалы</a>
-                            </li>
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="#">О нас</a></li>
-                            <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="#">Контакты</a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
+
+
+
+
+                <button class="header-main__burger burger-menu" type="button">
+                    <span class="burger-line"></span>
+                </button>
             </div>
         </div>
-
+        <div class="mobile-menu" role="navigation" aria-hidden="true" aria-expanded="false">
+            <div class="container">
+                <nav class="mobile-menu__nav">
+                    <ul class="mobile-menu__nav-list">
+                        <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                                href="#products">Продукция</a>
+                        </li>
+                        <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link"
+                                href="#features">Материалы</a>
+                        </li>
+                        <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="#">О
+                                нас</a>
+                        </li>
+                        <li class="mobile-menu__nav-item"><a class="mobile-menu__nav-link" href="#">Контакты</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
 
     <main>

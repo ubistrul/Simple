@@ -1,7 +1,5 @@
-function smoothLinksScroll(linksNodeList, mobileMenuController) {
-    const header = document.querySelector('.header');
-    const currentHeaderHeight = () => header.offsetHeight;
-
+function smoothLinksScroll({ headerController, linksNodeList, mobileMenuController }) {
+    const currentHeaderHeight = () => headerController.currentHeaderHeight();
     linksNodeList.forEach((item) => {
         let hashLink = item.getAttribute('href').replace('#', '');
 

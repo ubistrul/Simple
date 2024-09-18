@@ -1,12 +1,13 @@
 .mobile-menu {
-    background-color: $color-bg-main;
+    background-color: #ebebeb;
     position: absolute;
     top: 0;
-    // height: 9999%;
     height: 100dvh;
+    height: 100vh;
     width: 100dvw;
-    z-index: 10;
-    padding-block: 66px;
+    width: 100vw;
+    // z-index: -2;
+    padding-block: 124px;
     transform: translateY(-300%);
     transition: all 0.2s ease;
 

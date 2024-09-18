@@ -10,8 +10,6 @@
     @media screen and (min-width: 510px) {
         display: none;
     }
-
-
 }
 .burger-line {
     position: relative;
@@ -21,7 +19,8 @@
     transition: transform 0.3s ease;
     border-radius: 12px;
 
-    &::after, &::before {
+    &::after,
+    &::before {
         content: '';
         position: absolute;
         left: 0;
@@ -38,11 +37,10 @@
 
     &::before {
         top: -8px;
-    } 
+    }
 }
 
 .burger-menu--active .burger-line {
-    // transform-origin: 50%;
     background-color: transparent;
 }
 

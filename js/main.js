@@ -5,17 +5,13 @@ import { smoothLinksScroll } from './modules/smoothLinksScroll.js';
 import { getWindowHeight } from './helpers/index.js';
 import { HeaderController } from './modules/headerController.js';
 
-const header = document.querySelector('.header');
-const headerTop = document.querySelector('.header-top');
-const headerBottom = document.querySelector('.header-bottom');
+const headerElement = document.querySelector('.header-main');
 
 const headerController = new HeaderController({
-    mainHeaderEl: header,
-    topHeaderElement: headerTop,
-    bottomHeaderElement: headerBottom,
+    headerElement: headerElement,
 });
 
-const mobileMenuHeight = () => getWindowHeight() - headerController.currentTopHeaderHeight();
+const mobileMenuHeight = () => getWindowHeight() - headerController.currentHeaderHeight();
 const main = document.querySelector('main');
 const firstMainElement = main.firstElementChild;
 
@@ -45,16 +41,17 @@ function updateElementPadding(element) {
 }
 
 window.addEventListener('resize', () => {
-    mobileMenuControl.updateMobileMenuHeight(10, mobileMenuHeight());
+    mobileMenuController.updateMobileMenuHeight(10, mobileMenuHeight());
+    // document.body.style.paddingTop = headerController.currentHeaderHeight() + 'px';
 
     updateElementPadding(firstMainElement);
     if (window.innerWidth > BREAK_POINTS.mobile) {
-        mobileMenuControl.closeMenu();
+        mobileMenuController.closeMenu();
     }
 });
 
 window.addEventListener('load', () => {
-    mobileMenuControl.updateMobileMenuHeight(10, mobileMenuHeight());
+    mobileMenuController.updateMobileMenuHeight(10, mobileMenuHeight());
 
     updateElementPadding(firstMainElement);
 });
@@ -68,7 +65,7 @@ const mobileMenuActiveClass = 'mobile-menu--active';
 const mobileMenuLinkClassName = 'mobile-menu__nav-link';
 const mobileMenuLinks = document.querySelectorAll(`.${mobileMenuLinkClassName}`);
 
-const mobileMenuControl = new MobileMenuController({
+const mobileMenuController = new MobileMenuController({
     triggerElement: burgerMenuBtn,
     menuElement: mobileMenu,
     triggerElementClassActive: burgerMenuActiveClass,
@@ -76,39 +73,23 @@ const mobileMenuControl = new MobileMenuController({
     menuLinks: mobileMenuLinks,
 });
 
-//? Top Header Search
+//? Header Search
 
-const searchBtnTop = document.querySelector('.nav-buttons-top__search');
-const searchFormTop = document.querySelector('.search-form-top');
-const searchFormTopInput = document.querySelector('.search-form-top__input');
-const searchCloseBtnTop = document.querySelector('.search-form-top__close');
-const searchFormTopActive = 'search-form-top--width';
+const searchBtn = document.querySelector('.nav-buttons__search');
+const searchForm = document.querySelector('.search-form');
+const searchFormInput = document.querySelector('.search-form__input');
+const searchCloseBtn = document.querySelector('.search-form__close');
+const searchFormActive = 'search-form--width';
 
 const searchTopController = new SearchController({
-    searchBtn: searchBtnTop,
-    searchElement: searchFormTop,
-    inputElement: searchFormTopInput,
-    closeBtn: searchCloseBtnTop,
-    activeClass: searchFormTopActive,
-});
-
-//? Bottom Header Search
-
-const searchBtnBottom = document.querySelector('.nav-buttons-bottom__search');
-const searchFormBottom = document.querySelector('.search-form-bottom');
-const searchFormBottomInput = document.querySelector('.search-form-bottom__input');
-const searchCloseBtnBottom = document.querySelector('.search-form-bottom__close');
-const searchFormBottomActiveClass = 'search-form-bottom--width';
-
-const searchBottomController = new SearchController({
-    searchBtn: searchBtnBottom,
-    searchElement: searchFormBottom,
-    inputElement: searchFormBottomInput,
-    closeBtn: searchCloseBtnBottom,
-    activeClass: searchFormBottomActiveClass,
+    searchBtn: searchBtn,
+    searchElement: searchForm,
+    inputElement: searchFormInput,
+    closeBtn: searchCloseBtn,
+    activeClass: searchFormActive,
 });
 
 //? Smooth scroll to Links
 
 const smoothLinks = document.querySelectorAll('a[href^="#"]', 'a[href^="#!"]');
-smoothLinksScroll(smoothLinks, mobileMenuControl);
+smoothLinksScroll({ headerController, linksNodeList: smoothLinks, mobileMenuController });
