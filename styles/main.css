@@ -382,7 +382,7 @@ body {
     height: 1px;
     bottom: 0px;
     left: -50%;
-    background-color: #dddddd;
+    background-color: #DDDDDD;
   }
 }
 .header-main__logo-img {
@@ -450,7 +450,7 @@ body {
     left: 0;
     content: "";
     height: 1px;
-    background-color: #d1d1e5;
+    background-color: #DDDDDD;
     width: 200%;
     transform: translateX(-25%);
   }

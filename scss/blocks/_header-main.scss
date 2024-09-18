@@ -51,7 +51,7 @@
                 height: 1px;
                 bottom: 0px;
                 left: -50%;
-                background-color: #dddddd;
+                background-color: $color-header-border;
             }
         }
     }
@@ -125,7 +125,7 @@
             left: 0;
             content: '';
             height: 1px;
-            background-color: #d1d1e5;
+            background-color: $color-header-border;
             width: 200%;
             transform: translateX(-25%);
         }
